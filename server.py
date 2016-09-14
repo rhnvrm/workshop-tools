@@ -27,10 +27,10 @@ def insert():
 @app.route('/display', methods=['GET'])
 @cross_origin(origin='*')
 def display():
-    sorted_lboard = sorted(leaderboard.items(), key=operator.itemgetter(1))
+    sorted_lboard = sorted(leaderboard.items(), key=operator.itemgetter(1), reverse=True)
     str_lboard = ""
     for i in sorted_lboard:
-        str_lboard += "" + i[0] + ":" + i[1]
+        str_lboard += "" + i[0] + ":" + i[1] + "\n"
     return str_lboard
 
 
